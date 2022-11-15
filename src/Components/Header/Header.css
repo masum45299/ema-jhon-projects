@@ -1,0 +1,24 @@
+nav{
+    background-color: #1C2B35;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+nav img{
+    padding-left: 112px;
+}
+.menu{
+    padding-right: 97px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    margin-left: 32px;
+}
+a:hover{
+    color: #FF9900;
+}
