@@ -1,0 +1,13 @@
+.order-main{
+    position: sticky;
+    top: 0px;
+}
+.order-summary{
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.order-info{
+    padding-left: 23px;
+}
