@@ -6,21 +6,26 @@ import './Product.css'
 
 const Product = () => {
     const [products,setProducts]=useState([])
+    const [cart,setCart]=useState([])
     useEffect(()=>{
         fetch('products.json')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
-    const [cart,setCart]=useState([])
-
+    
     useEffect(()=>{
-        const storeCart=getStoredCart();
-        
+        const storeCart=getStoredCart()
+        const saveCart=[];
         for(const id in storeCart){
             const addProduct=products.find(product=>product.id===id)
-            console.log(addProduct)
+            if(addProduct){
+                const quantity=storeCart[id];
+                addProduct.quantity=quantity;
+                saveCart.push(addProduct)
+            }
         }
-    },[])
+        setCart(saveCart)
+    },[products])
 
     const handlerToCart=(product)=>{
         const newCart=[...cart,product];
