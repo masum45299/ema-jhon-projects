@@ -44,7 +44,6 @@ const Product = () => {
             </div>
             <div className="order-container">
                 <Cart cart={cart}></Cart>
-                <h4>Masum</h4>
             </div>
         </div>
     );

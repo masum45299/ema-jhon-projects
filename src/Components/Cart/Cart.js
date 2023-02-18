@@ -12,7 +12,7 @@ const Cart = (props) => {
         shipping=shipping +product.shipping;
         quantity=quantity+product.quantity;
     }
-    console.log(quantity)
+    
     const taxDecimal=total*0.1;
     const   stringTax=taxDecimal.toFixed(2)
     const   tax=parseFloat(stringTax);

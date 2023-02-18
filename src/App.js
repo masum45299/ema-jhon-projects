@@ -1,14 +1,31 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import Header from './Components/Header/Header';
+import Inventory from './Components/Inventory/Inventory';
+import Layout from './Components/Layout/Layout';
+import Login from './Components/Login/Login';
+import OrderReview from './Components/OrderReview/OrderReview';
+import Orders from './Components/Orders/Orders';
 import Product from './Components/Product/Product';
 
 
 
+
 function App() {
+  const router=createBrowserRouter([
+    {path :'/', element: <Layout></Layout>, children:[
+      {path:'/', element: <Product></Product>},
+      {path:'/Product', element: <Product></Product>},
+      {path:'/Order', element: <Orders></Orders>},
+      {path: '/OrderReview', element: <OrderReview></OrderReview>},
+      {path: '/Inventory', element: <Inventory></Inventory> },
+      {path: '/Login', element: <Login></Login> },
+    ]},
+  ])
   return (
     <div>
-      <Header></Header>
-      <Product></Product>
+      <RouterProvider
+      router={router}
+      ></RouterProvider>
     </div>
   );
 }
