@@ -13,9 +13,15 @@ import Product from './Components/Product/Product';
 function App() {
   const router=createBrowserRouter([
     {path :'/', element: <Layout></Layout>, children:[
-      {path:'/', element: <Product></Product>},
-      {path:'/Product', element: <Product></Product>},
-      {path:'/Order', element: <Orders></Orders>},
+      {path:'/',
+      loader : ()=>{ return fetch('products.json')},
+      element: <Product></Product>},
+      {path:'/Product',
+      loader : ()=>{ return fetch('products.json')},
+      element: <Product></Product>},
+      {path:'/Order',
+        loader : ()=> { return fetch('products.json')},
+      element: <Orders></Orders>},
       {path: '/OrderReview', element: <OrderReview></OrderReview>},
       {path: '/Inventory', element: <Inventory></Inventory> },
       {path: '/Login', element: <Login></Login> },
