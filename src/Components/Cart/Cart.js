@@ -22,7 +22,7 @@ const Cart = (props) => {
         <div className='order-main'>
             <p className='order-summary'>Order Summary</p>
             <div className='order-info'>
-            <p>Selected item : {cart.length}</p>
+            <p>Selected item : {quantity}</p>
             <p>Total Price: {total}  </p>
             <p>Total Shipping Charge: {shipping}</p>
             <p>Tax: {tax}</p>
