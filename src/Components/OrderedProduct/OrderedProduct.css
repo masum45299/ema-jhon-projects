@@ -19,7 +19,10 @@
 
 .reviewDetails-container{
     display: flex;
-    align-items: center
+    margin-left: 17px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
 }
 .reviewDetails p{
     margin:  0px;
@@ -32,6 +35,10 @@
     border-radius: 50%;
     border: 0px;
     background: rgba(235, 87, 87, 0.3);
+    cursor: pointer;
+}
+.btn-delete:hover{
+    background: rgba(235, 87, 87, 0.5);
 }
 .fontAwesome{
     color: #EB5757;
