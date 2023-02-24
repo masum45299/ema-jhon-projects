@@ -25,7 +25,6 @@ const Product = () => {
     }, [products])
 
     const handlerToCart = (selectedProduct) => {
-        console.log(selectedProduct)
         // const newCart = [...cart, selectedProduct];
         let newCart=[];
         
