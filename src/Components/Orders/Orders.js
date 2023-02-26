@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, NavLink, useLoaderData } from 'react-router-dom';
 import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart'
 import OrderedProduct from '../OrderedProduct/OrderedProduct';
+import './Order.css'
 
 const Orders = () => {
     const orders=useLoaderData()
@@ -30,9 +31,15 @@ const Orders = () => {
                 deleteCartProduct={deleteCartProduct}
                 ></OrderedProduct>)
                }
+               
+            {
+                cart.length ===0 && <h1>Please  <NavLink className="Shop-more" to="/">Shop More</NavLink></h1>
+            }
             </div>
             <div className="order-container">
-                <Cart clearCart={clearCart}  cart={cart}></Cart>
+                <Cart clearCart={clearCart}  cart={cart}>
+                <button><Link className='order-review' to="/Order">Order Review</Link></button>
+                </Cart>
             </div>
         </div>
     );
